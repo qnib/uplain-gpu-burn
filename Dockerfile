@@ -10,4 +10,5 @@ RUN apt-get install -y wget \
 
 FROM ubuntu
 COPY --from=build /usr/local/src/gpu_burn /usr/local/bin/
-ENTRYPOINT /usr/local/bin/gpu_burn
+COPY run.sh /run.sh
+CMD ["/run.sh"]
